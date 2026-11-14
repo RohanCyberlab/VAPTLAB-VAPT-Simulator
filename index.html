@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAPT Command Center | Security Assessment Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <div class="brand login-brand"><div class="brand-icon">⌁</div><div><b>VAPT<span>LAB</span></b><small>SECURITY COMMAND CENTER</small></div></div>
+    <div class="eyebrow">SIMULATED ACCESS PORTAL</div>
+    <h1>Welcome back</h1>
+    <p>Sign in to the fictional VAPT demonstration workspace.</p>
+    <label>Username</label><input id="loginUser" value="analyst.demo" autocomplete="username">
+    <label>Password</label><input id="loginPass" type="password" value="demo123" autocomplete="current-password">
+    <label>Workspace role</label><select id="loginRole"><option>Security Analyst</option><option>Administrator (Demo)</option><option>Read-only Auditor</option></select>
+    <button class="primary login-submit" id="loginSubmit">Sign in to demo workspace →</button>
+    <div class="login-hint">Demo credentials are prefilled. Any non-empty username and password will work. No real authentication occurs.</div>
+  </div>
+</div>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-icon">⌁</div><div><b>VAPT<span>LAB</span></b><small>SECURITY COMMAND CENTER</small></div></div>
+    <div class="workspace-label">WORKSPACE</div>
+    <button class="nav active" data-view="overview">▦ <span>Overview</span></button>
+    <button class="nav" data-view="assets">▤ <span>Asset inventory</span></button>
+    <button class="nav" data-view="recon">⌕ <span>Recon & discovery</span></button>
+    <button class="nav" data-view="scanner">◉ <span>Vulnerability scanner</span></button>
+    <button class="nav" data-view="firewall">▣ <span>Cisco ASA review</span></button>
+    <button class="nav" data-view="terminal">$_ <span>Linux terminal</span></button>
+    <button class="nav" data-view="nmap">⌗ <span>Nmap simulator</span></button>
+    <button class="nav" data-view="wireshark">≋ <span>Wireshark simulator</span></button>
+    <button class="nav" data-view="reports">▧ <span>Reports</span></button>
+    <div class="sidebar-bottom"><div class="demo-badge"><i></i> DEMO ENVIRONMENT</div><small>All data is simulated.<br>No live systems are scanned.</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><span class="crumb">PROJECTS /</span> <b>Corporate Infrastructure VAPT</b></div><div class="top-actions"><span class="status-pill"><i></i> LAB ONLINE</span><button class="avatar" id="profileBtn">VA</button></div></header>
+    <section class="content">
+      <div class="page-heading"><div><div class="eyebrow">AUTHORIZED SECURITY ASSESSMENT · DEMO</div><h1 id="pageTitle">Security overview</h1><p id="pageDesc">A simulated corporate environment for demonstrating a professional VAPT workflow.</p></div><button class="primary" id="exportBtn">↓ Export demo report</button></div>
+      <div id="view"></div>
+    </section>
+    <footer>VAPTLAB · Educational simulation · Sample assets and findings only · v1.0</footer>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
